@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+{{ $brews := list
+     "fzf" -}}
+{{ $casks := list
+     "ghostty" -}}
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+{{ range ($casks | sortAlpha | uniq) -}}
+cask "{{ . }}"
+{{ end -}}
+EOF
