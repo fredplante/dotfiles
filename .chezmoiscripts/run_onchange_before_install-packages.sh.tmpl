@@ -5,6 +5,7 @@ set -eufo pipefail
 {{ $brews := list
      "fzf" -}}
 {{ $casks := list
+     "font-fira-mono-nerd-font"
      "ghostty" -}}
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
