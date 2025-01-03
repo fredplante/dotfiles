@@ -1,0 +1,7 @@
+tap "homebrew/bundle"
+brew "chezmoi"
+brew "curl"
+brew "git"
+cask "font-fira-mono-nerd-font"
+cask "ghostty"
+cask "proxy-audio-device"
