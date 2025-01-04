@@ -77,11 +77,41 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(asdf git)
+plugins=(
+	asdf 
+	bundler
+	common-aliases
+	eza
+	fzf 
+	rails 
+	git 
+	alias-tips 
+	zsh-autosuggestions 
+	zsh-syntax-highlighting
+)
+
+# Configure eza plugin
+zstyle ':omz:plugins:eza' 'dirs-first' yes
+zstyle ':omz:plugins:eza' 'git-status' yes
+zstyle ':omz:plugins:eza' 'icons' yes
+
+# Skip all aliases in lib files
+zstyle ':omz:lib:*' aliases no
+
+# Enable cattpuccin theme for zsh-syntax-highlighting
+source $ZSH/custom/plugins/catppuccin-zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+export LS_COLORS="$(vivid generate catppuccin-mocha)"
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+--color=selected-bg:#45475a \
+--multi"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
