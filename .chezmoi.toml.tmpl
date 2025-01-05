@@ -1,0 +1,13 @@
+
+{{/* boolean feature tags */}}
+{{- $work := false -}}{{/* true if this machine is a work machine */}}
+
+{{-   $computerName := output "scutil" "--get" "ComputerName" | trim -}}
+{{-   if eq $computerName "MBP-692-FPLA" -}}
+{{-     $work = true -}}
+{{-   else -}}
+{{-     $work = false -}}
+{{-   end -}}
+
+[data]
+    work = {{ $work }} 
