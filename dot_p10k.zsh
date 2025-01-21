@@ -147,9 +147,9 @@
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
   # Connect left prompt lines with these symbols.
-  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%0F╭─'
-  typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX='%0F├─'
-  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%0F╰─'
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%F{241}╭─'
+  typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX='%F{241}├─'
+  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%F{241}╰─'
   # Connect right prompt lines with these symbols.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX=
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX=
@@ -478,8 +478,8 @@
   # config: `git config bash.showDirtyState false`.
   typeset -g POWERLEVEL9K_VCS_MAX_INDEX_SIZE_DIRTY=-1
 
-  # Don't show Git status in prompt for repositories whose workdir matches this pattern.
   # For example, if set to '~', the Git repository at $HOME/.git will be ignored.
+  # Don't show Git status in prompt for repositories whose workdir matches this pattern.
   # Multiple patterns can be combined with '|': '~(|/foo)|/bar/baz/*'.
   typeset -g POWERLEVEL9K_VCS_DISABLED_WORKDIR_PATTERN='~'
 
